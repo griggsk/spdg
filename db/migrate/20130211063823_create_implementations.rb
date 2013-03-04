@@ -6,7 +6,6 @@ class CreateImplementations < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :implementations
   end
   
   def down 

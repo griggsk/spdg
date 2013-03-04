@@ -10,4 +10,9 @@ class CreateInitiatives < ActiveRecord::Migration
       t.timestamps
     end
   end
+  
+  def down 
+    drop_table :initiatives
+  end
+  
 end
