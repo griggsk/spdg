@@ -5,6 +5,7 @@ class ImplementationsStages < ActiveRecord::Migration
     end
   end
 
-  def down
+   def down 
+    drop_table :implementations_stages
   end
 end

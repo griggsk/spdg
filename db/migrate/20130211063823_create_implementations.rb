@@ -6,6 +6,10 @@ class CreateImplementations < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :implementations, :stage_id
+    add_index :implementations
+  end
+  
+  def down 
+    drop_table :implementations
   end
 end

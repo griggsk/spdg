@@ -7,4 +7,8 @@ class CreateStages < ActiveRecord::Migration
       t.timestamps
     end
   end
+  
+  def down 
+    drop_table :stages
+  end
 end

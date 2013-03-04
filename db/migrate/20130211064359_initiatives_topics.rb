@@ -5,6 +5,7 @@ class InitiativesTopics < ActiveRecord::Migration
     end
   end
 
-  def down
+ def down 
+    drop_table :initiatives_topics
   end
 end
