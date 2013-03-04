@@ -1,0 +1,38 @@
+<%- model_class = Initiative -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:state_id) %>:</strong></dt>
+  <dd><%= @initiative.state.name %></dd>
+  <dt><strong>Year:</strong></dt>
+  <dd><%= @initiative.start_year %> - 
+  	  <%= @initiative.end_year %></dd>
+  <dt><strong>Topics:</strong></dt>
+  <dd><%= @initiative.topics.collect(&:name).join(", ") %></dd>
+  <dt><strong>Populations:</strong></dt>
+  <dd><%= @initiative.populations.collect(&:target).join(", ") %></dd>
+  <dt><strong>Professional Developments:</strong></dt>
+  <dd><%= @initiative.professionaldevelopments.collect(&:name).join(", ") %></dd>
+  <dt><strong>Contact:</strong></dt>
+   
+  <dd><%= email_link(@initiative.contact)  %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @initiative.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:resources) %>:</strong></dt>
+  <dd><%= @initiative.resources %></dd>
+  <dt><strong>Implementaions:</strong></dt>
+  <% @initiative.implementations.each do |implementation| %>
+  	<dd><%= implementation.year%>:
+  		<%= implementation.stages.collect(&:name).join(", ") %>
+  	</dd>
+  <%end%>
+</dl>
+
+ <% if user_signed_in? && current_user.role === 'admin' %>
+	<div class="form-actions">
+	  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+	              edit_initiative_path(@initiative), :class => 'btn' %>
+	</div>
+<% end %>

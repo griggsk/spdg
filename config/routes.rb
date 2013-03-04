@@ -1,5 +1,33 @@
 Profiles::Application.routes.draw do
+  
   devise_for :users
+  
+  resources :populations
+      
+  resources :professional_developments
+  
+  resources :topics
+  
+  resources :stages
+  
+  resources :users
+  
+  resources :states 
+  
+  resources :contacts
+     
+  resources :initiatives 
+  
+  resources :implementations
+  
+  resources :search
+
+  get "search/index"
+  
+  
+  get "home/index"
+
+  get "home/admin"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -51,6 +79,7 @@ Profiles::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
+  root :to => "home#index"
 
   # See how all your routes lay out with "rake routes"
 

@@ -1,0 +1,72 @@
+<%= nested_form_for @initiative, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :state_id, :class => 'control-label' %>
+    <div class="controls">
+     <%= f.collection_select :state_id, @states, :id, :name %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :description, :rows => 3, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label 'Topics', :for => 'initiative_topic_ids', :class => 'control-label' %>
+    <div class="controls"> 
+     <%= f.collection_select :topic_ids, @topics, :id, :name, {:name => 'initiative[topic_ids][]'}, {:multiple => :true} %>
+    </div>
+  </div>
+   <div class="control-group">
+    <%= f.label 'Populations', :class => 'control-label' %>
+    <div class="controls"> 
+     <% @populations.each do |pop| %>
+			<%= check_box_tag(
+                            "initiative[population_ids][#{pop.id}]", 
+                            "1", 
+                            @initiative.populations.detect{|d| d == pop}) %>
+			<%= "#{pop.target}"%><br />
+		<% end %>
+   
+    </div>
+  </div>
+   <div class="control-group">
+    <%= f.label 'Professional Developments', :class => 'control-label' %>
+    <div class="controls"> 
+     <% @pds.each do |pd| %>
+			<%= check_box_tag(
+                            "initiative[professionaldevelopment_ids][#{pd.id}]", 
+                            "1", 
+                            @initiative.professionaldevelopments.detect{|d| d == pd}) %>
+			<%= "#{pd.name}"%><br />
+		<% end %>
+   
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :start_year, :class => 'control-label' %>
+    <div class="controls">
+      <%= select_year (@initiative.start_year || Date.today), :start_year => Time.now.year+12, :end_year => Time.now.year - 12, :field_name => :start_year, :prefix => :initiative  %>
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <%= f.label :end_year, :class => 'control-label' %>
+    <div class="controls">
+      <%= select_year (@initiative.end_year || Date.today), :start_year => Time.now.year+12, :end_year => Time.now.year-3, :field_name => :end_year, :prefix => :initiative  %>
+    </div>
+  </div>
+  
+  <div class="control-group">
+ 		<%= f.fields_for :implementations %>
+  </div>
+  	  
+  <p><%= f.link_to_add "Add Implementation", :implementations %></p>
+  
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                initiatives_path, :class => 'btn' %>
+  </div>
+  
+<% end %>

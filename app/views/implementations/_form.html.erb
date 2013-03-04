@@ -1,0 +1,38 @@
+<%= form_for @implementation, :html => { :class => 'form-horizontal' } do |f| %>
+ <% if @implementation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@implementation.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% @implementation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="control-group">
+    <%= f.label :initiative_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :initiative_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :year, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :year, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :stage_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :stage_id, :class => 'number_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                implementations_path, :class => 'btn' %>
+  </div>
+<% end %>

@@ -1,0 +1,9 @@
+    <% year = f.object.year.to_s %>
+    <%= f.label :stage_id, year+' Implementation', :class => 'control-label' %>
+    <div class="controls">
+     <%= f.collection_select :stage_ids, @stages, :id, :name, {:name => 'initiative[stage_ids][]'}, {:multiple => :true} %>
+      <%= f.hidden_field :year %>
+    </div>
+     <p>
+     <%= f.link_to_remove "remove" %>
+	</p>

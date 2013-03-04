@@ -6,7 +6,7 @@ gem 'rails', '3.2.2'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-
+gem 'mysql2'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -18,10 +18,16 @@ group :assets do
   # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
+  gem "twitter-bootstrap-rails"
 end
 
 gem 'jquery-rails'
+gem 'cancan'
 gem 'devise'
+gem "nested_form"
+gem 'jquery-ui-rails'
+
+# gem 'activerecord-mysql-adapter'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

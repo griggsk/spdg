@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  state: 
+  start_year: 
+  end_year: 
+  description: 
+  resources: MyText
+
+two:
+  state: 
+  start_year: 
+  end_year: 
+  description: 
+  resources: MyText
