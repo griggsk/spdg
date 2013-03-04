@@ -7,6 +7,7 @@ gem 'rails', '3.2.2'
 
 gem 'sqlite3'
 gem 'mysql2'
+gem 'mysql'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -25,7 +26,6 @@ gem 'jquery-rails'
 gem 'cancan'
 gem 'devise'
 gem "nested_form"
-gem 'jquery-ui-rails'
 
 # gem 'activerecord-mysql-adapter'
 
