@@ -1,5 +1,5 @@
 development:
-  adapter: mysql
+  adapter: mysql2
   encoding: utf8
   database: spdg_test
   username: root
@@ -10,14 +10,14 @@ development:
 # re-generated from your development database when you run 'rake'.
 # Do not set this db to the same as development or production.
 test:
-  adapter: mysql
+  adapter: mysql2
   encoding: utf8
   database: spdg_test
   username: spdg_user
   password: bwyaQbGFbPBt8W9U
 
 production:
-  adapter: mysql
+  adapter: mysql2
   encoding: utf8
   database: spdg_test
   username: spdg_user
