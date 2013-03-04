@@ -2,9 +2,8 @@ development:
   adapter: mysql2
   encoding: utf8
   database: spdg_test
-  username: root
-  password:
-  socket: /var/run/mysqld/mysqld.sock
+  username: spdg_user
+  password: bwyaQbGFbPBt8W9U
 
 # Warning: The database defined as 'test' will be erased and
 # re-generated from your development database when you run 'rake'.
