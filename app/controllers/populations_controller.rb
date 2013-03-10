@@ -7,7 +7,7 @@ class PopulationsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @populations }
+      format.json { render :json =>  @populations }
     end
   end
 
@@ -18,7 +18,7 @@ class PopulationsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @population }
+      format.json { render :json =>  @population }
     end
   end
 
@@ -29,7 +29,7 @@ class PopulationsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @population }
+      format.json { render :json =>  @population }
     end
   end
 
@@ -46,10 +46,10 @@ class PopulationsController < ApplicationController
     respond_to do |format|
       if @population.save
         format.html { redirect_to @population, notice: 'Population was successfully created.' }
-        format.json { render json: @population, status: :created, location: @population }
+        format.json { render :json =>  @population, status: :created, location: @population }
       else
         format.html { render action: "new" }
-        format.json { render json: @population.errors, status: :unprocessable_entity }
+        format.json { render :json =>  @population.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -65,7 +65,7 @@ class PopulationsController < ApplicationController
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @population.errors, status: :unprocessable_entity }
+        format.json { render :json =>  @population.errors, status: :unprocessable_entity }
       end
     end
   end

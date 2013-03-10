@@ -7,7 +7,7 @@ class ProfessionalDevelopmentsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @professionaldevelopments }
+      format.json { render :json =>  @professionaldevelopments }
     end
   end
 
@@ -18,7 +18,7 @@ class ProfessionalDevelopmentsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @professionaldevelopment }
+      format.json { render :json =>  @professionaldevelopment }
     end
   end
 
@@ -29,7 +29,7 @@ class ProfessionalDevelopmentsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @professionaldevelopment }
+      format.json { render :json =>  @professionaldevelopment }
     end
   end
 
@@ -46,10 +46,10 @@ class ProfessionalDevelopmentsController < ApplicationController
     respond_to do |format|
       if @professionaldevelopment.save
         format.html { redirect_to @professionaldevelopment, notice: 'Professionaldevelopment was successfully created.' }
-        format.json { render json: @professionaldevelopment, status: :created, location: @professionaldevelopment }
+        format.json { render :json =>  @professionaldevelopment, status: :created, location: @professionaldevelopment }
       else
         format.html { render action: "new" }
-        format.json { render json: @professionaldevelopment.errors, status: :unprocessable_entity }
+        format.json { render :json =>  @professionaldevelopment.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -65,7 +65,7 @@ class ProfessionalDevelopmentsController < ApplicationController
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @professionaldevelopment.errors, status: :unprocessable_entity }
+        format.json { render :json =>  @professionaldevelopment.errors, status: :unprocessable_entity }
       end
     end
   end

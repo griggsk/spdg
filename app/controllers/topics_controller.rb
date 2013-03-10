@@ -7,7 +7,7 @@ class TopicsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @topics }
+      format.json { render :json =>  @topics }
     end
   end
 
@@ -18,7 +18,7 @@ class TopicsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @topic }
+      format.json { render :json =>  @topic }
     end
   end
 
@@ -29,7 +29,7 @@ class TopicsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @topic }
+      format.json { render :json =>  @topic }
     end
   end
 
@@ -46,10 +46,10 @@ class TopicsController < ApplicationController
     respond_to do |format|
       if @topic.save
         format.html { redirect_to @topic, notice: 'Topic was successfully created.' }
-        format.json { render json: @topic, status: :created, location: @topic }
+        format.json { render :json =>  @topic, status: :created, location: @topic }
       else
         format.html { render action: "new" }
-        format.json { render json: @topic.errors, status: :unprocessable_entity }
+        format.json { render :json =>  @topic.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -65,7 +65,7 @@ class TopicsController < ApplicationController
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @topic.errors, status: :unprocessable_entity }
+        format.json { render :json =>  @topic.errors, status: :unprocessable_entity }
       end
     end
   end

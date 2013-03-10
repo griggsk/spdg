@@ -7,7 +7,7 @@ class StatesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @states }
+      format.json { render :json =>  @states }
     end
   end
 
@@ -18,7 +18,7 @@ class StatesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @state }
+      format.json { render :json =>  @state }
     end
   end
 
@@ -29,7 +29,7 @@ class StatesController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @state }
+      format.json { render :json =>  @state }
     end
   end
 
@@ -46,10 +46,10 @@ class StatesController < ApplicationController
     respond_to do |format|
       if @state.save
         format.html { redirect_to @state, notice: 'State was successfully created.' }
-        format.json { render json: @state, status: :created, location: @state }
+        format.json { render :json =>  @state, status: :created, location: @state }
       else
         format.html { render action: "new" }
-        format.json { render json: @state.errors, status: :unprocessable_entity }
+        format.json { render :json =>  @state.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -65,7 +65,7 @@ class StatesController < ApplicationController
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @state.errors, status: :unprocessable_entity }
+        format.json { render :json =>  @state.errors, status: :unprocessable_entity }
       end
     end
   end

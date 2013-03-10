@@ -7,7 +7,7 @@ class ImplementationsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @implementations }
+      format.json { render :json =>  @implementations }
     end
   end
 
@@ -18,7 +18,7 @@ class ImplementationsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @implementation }
+      format.json { render :json =>  @implementation }
     end
   end
 
@@ -29,7 +29,7 @@ class ImplementationsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @implementation }
+      format.json { render :json =>  @implementation }
     end
   end
 
@@ -46,10 +46,10 @@ class ImplementationsController < ApplicationController
     respond_to do |format|
       if @implementation.save
         format.html { redirect_to @implementation, notice: 'Implementation was successfully created.' }
-        format.json { render json: @implementation, status: :created, location: @implementation }
+        format.json { render :json =>  @implementation, status: :created, location: @implementation }
       else
         format.html { render action: "new" }
-        format.json { render json: @implementation.errors, status: :unprocessable_entity }
+        format.json { render :json =>  @implementation.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -65,7 +65,7 @@ class ImplementationsController < ApplicationController
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @implementation.errors, status: :unprocessable_entity }
+        format.json { render :json =>  @implementation.errors, status: :unprocessable_entity }
       end
     end
   end
