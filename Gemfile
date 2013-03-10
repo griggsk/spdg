@@ -23,12 +23,12 @@ end
   gem 'uglifier', '>= 1.0.3'
   gem 'therubyracer', :platforms => :ruby
   gem 'less-rails'
-  gem 'twitter-bootstrap-rails'
+  gem 'twitter-bootstrap-rails', '~> 2.0rc0'
 
-gem 'jquery-rails'
-gem 'cancan'
-gem 'devise'
-gem "nested_form"
+  gem 'jquery-rails'
+  gem 'cancan'
+  gem 'devise'
+  gem "nested_form"
 
 # gem 'activerecord-mysql-adapter'
 
