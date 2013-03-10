@@ -48,7 +48,7 @@ class StagesController < ApplicationController
         format.html { redirect_to @stage, :notice => 'Stage was successfully created.' }
         format.json { render :json =>  @stage, :status => :created, :location => @stage }
       else
-        format.html { render action: "new" }
+        format.html { render :action => "new" }
         format.json { render :json =>  @stage.errors, :status => :unprocessable_entity }
       end
     end
@@ -64,7 +64,7 @@ class StagesController < ApplicationController
         format.html { redirect_to @stage, :notice => 'Stage was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render :action => "edit" }
         format.json { render :json =>  @stage.errors, :status => :unprocessable_entity }
       end
     end

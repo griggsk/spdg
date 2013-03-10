@@ -48,7 +48,7 @@ class TopicsController < ApplicationController
         format.html { redirect_to @topic, :notice => 'Topic was successfully created.' }
         format.json { render :json =>  @topic, :status => :created, :location => @topic }
       else
-        format.html { render action: "new" }
+        format.html { render :action => "new" }
         format.json { render :json =>  @topic.errors, :status => :unprocessable_entity }
       end
     end
@@ -64,7 +64,7 @@ class TopicsController < ApplicationController
         format.html { redirect_to @topic, :notice => 'Topic was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render :action => "edit" }
         format.json { render :json =>  @topic.errors, :status => :unprocessable_entity }
       end
     end

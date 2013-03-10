@@ -48,7 +48,7 @@ class ProfessionalDevelopmentsController < ApplicationController
         format.html { redirect_to @professionaldevelopment, :notice => 'Professionaldevelopment was successfully created.' }
         format.json { render :json =>  @professionaldevelopment, :status => :created, :location => @professionaldevelopment }
       else
-        format.html { render action: "new" }
+        format.html { render :action => "new" }
         format.json { render :json =>  @professionaldevelopment.errors, :status => :unprocessable_entity }
       end
     end
@@ -64,7 +64,7 @@ class ProfessionalDevelopmentsController < ApplicationController
         format.html { redirect_to @professionaldevelopment, :notice => 'Professionaldevelopment was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render :action => "edit" }
         format.json { render :json =>  @professionaldevelopment.errors, :status => :unprocessable_entity }
       end
     end

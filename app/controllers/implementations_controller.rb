@@ -48,7 +48,7 @@ class ImplementationsController < ApplicationController
         format.html { redirect_to @implementation, :notice => 'Implementation was successfully created.' }
         format.json { render :json =>  @implementation, :status => :created, :location => @implementation }
       else
-        format.html { render action: "new" }
+        format.html { render :action => "new" }
         format.json { render :json =>  @implementation.errors, :status => :unprocessable_entity }
       end
     end
@@ -64,7 +64,7 @@ class ImplementationsController < ApplicationController
         format.html { redirect_to @implementation, :notice => 'Implementation was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render :action => "edit" }
         format.json { render :json =>  @implementation.errors, :status => :unprocessable_entity }
       end
     end

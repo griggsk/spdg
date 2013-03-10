@@ -66,7 +66,7 @@ class InitiativesController < ApplicationController
         format.html { redirect_to @initiative, :notice => 'Initiative was successfully created.' }
         format.json { render :json =>  @initiative, :status => :created, :location => @initiative }
       else
-        format.html { render action: "new" }
+        format.html { render :action => "new" }
         format.json { render :json =>  @initiative.errors, :status => :unprocessable_entity }
       end
     end
@@ -82,7 +82,7 @@ class InitiativesController < ApplicationController
         format.html { redirect_to @initiative, :notice => 'Initiative was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render :action => "edit" }
         format.json { render :json =>  @initiative.errors, :status => :unprocessable_entity }
       end
     end

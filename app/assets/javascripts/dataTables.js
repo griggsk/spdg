@@ -2958,7 +2958,7 @@
 			}
 			else
 			{
-				_fnLog( oSettings, 0, "Unknown paging action: "+mAction );
+				_fnLog( oSettings, 0, "Unknown paging :action => "+mAction );
 			}
 			$(oSettings.oInstance).trigger('page', oSettings);
 			
@@ -11580,8 +11580,8 @@
 				var nPrevious = els[0],
 					nNext = els[1];
 				
-				oSettings.oApi._fnBindAction( nPrevious, {action: "previous"}, fnClickHandler );
-				oSettings.oApi._fnBindAction( nNext,     {action: "next"},     fnClickHandler );
+				oSettings.oApi._fnBindAction( nPrevious, {:action => "previous"}, fnClickHandler );
+				oSettings.oApi._fnBindAction( nNext,     {:action => "next"},     fnClickHandler );
 				
 				/* ID the first elements only */
 				if ( !oSettings.aanFeatures.p )
@@ -11678,10 +11678,10 @@
 					nNext = els[2],
 					nLast = els[3];
 				
-				oSettings.oApi._fnBindAction( nFirst, {action: "first"},    fnClickHandler );
-				oSettings.oApi._fnBindAction( nPrev,  {action: "previous"}, fnClickHandler );
-				oSettings.oApi._fnBindAction( nNext,  {action: "next"},     fnClickHandler );
-				oSettings.oApi._fnBindAction( nLast,  {action: "last"},     fnClickHandler );
+				oSettings.oApi._fnBindAction( nFirst, {:action => "first"},    fnClickHandler );
+				oSettings.oApi._fnBindAction( nPrev,  {:action => "previous"}, fnClickHandler );
+				oSettings.oApi._fnBindAction( nNext,  {:action => "next"},     fnClickHandler );
+				oSettings.oApi._fnBindAction( nLast,  {:action => "last"},     fnClickHandler );
 				
 				/* ID the first elements only */
 				if ( !oSettings.aanFeatures.p )
