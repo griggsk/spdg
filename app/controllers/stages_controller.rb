@@ -45,11 +45,11 @@ class StagesController < ApplicationController
 
     respond_to do |format|
       if @stage.save
-        format.html { redirect_to @stage, notice: 'Stage was successfully created.' }
-        format.json { render :json =>  @stage, status: :created, location: @stage }
+        format.html { redirect_to @stage, :notice => 'Stage was successfully created.' }
+        format.json { render :json =>  @stage, :status => :created, :location => @stage }
       else
         format.html { render action: "new" }
-        format.json { render :json =>  @stage.errors, status: :unprocessable_entity }
+        format.json { render :json =>  @stage.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -61,11 +61,11 @@ class StagesController < ApplicationController
 
     respond_to do |format|
       if @stage.update_attributes(params[:stage])
-        format.html { redirect_to @stage, notice: 'Stage was successfully updated.' }
+        format.html { redirect_to @stage, :notice => 'Stage was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render :json =>  @stage.errors, status: :unprocessable_entity }
+        format.json { render :json =>  @stage.errors, :status => :unprocessable_entity }
       end
     end
   end

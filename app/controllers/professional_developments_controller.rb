@@ -45,11 +45,11 @@ class ProfessionalDevelopmentsController < ApplicationController
 
     respond_to do |format|
       if @professionaldevelopment.save
-        format.html { redirect_to @professionaldevelopment, notice: 'Professionaldevelopment was successfully created.' }
-        format.json { render :json =>  @professionaldevelopment, status: :created, location: @professionaldevelopment }
+        format.html { redirect_to @professionaldevelopment, :notice => 'Professionaldevelopment was successfully created.' }
+        format.json { render :json =>  @professionaldevelopment, :status => :created, :location => @professionaldevelopment }
       else
         format.html { render action: "new" }
-        format.json { render :json =>  @professionaldevelopment.errors, status: :unprocessable_entity }
+        format.json { render :json =>  @professionaldevelopment.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -61,11 +61,11 @@ class ProfessionalDevelopmentsController < ApplicationController
 
     respond_to do |format|
       if @professionaldevelopment.update_attributes(params[:professionaldevelopment])
-        format.html { redirect_to @professionaldevelopment, notice: 'Professionaldevelopment was successfully updated.' }
+        format.html { redirect_to @professionaldevelopment, :notice => 'Professionaldevelopment was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render :json =>  @professionaldevelopment.errors, status: :unprocessable_entity }
+        format.json { render :json =>  @professionaldevelopment.errors, :status => :unprocessable_entity }
       end
     end
   end

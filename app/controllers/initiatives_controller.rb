@@ -63,11 +63,11 @@ class InitiativesController < ApplicationController
     
     respond_to do |format|
       if @initiative.save
-        format.html { redirect_to @initiative, notice: 'Initiative was successfully created.' }
-        format.json { render :json =>  @initiative, status: :created, location: @initiative }
+        format.html { redirect_to @initiative, :notice => 'Initiative was successfully created.' }
+        format.json { render :json =>  @initiative, :status => :created, :location => @initiative }
       else
         format.html { render action: "new" }
-        format.json { render :json =>  @initiative.errors, status: :unprocessable_entity }
+        format.json { render :json =>  @initiative.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -79,11 +79,11 @@ class InitiativesController < ApplicationController
 
     respond_to do |format|
       if @initiative.update_attributes(params[:initiative])
-        format.html { redirect_to @initiative, notice: 'Initiative was successfully updated.' }
+        format.html { redirect_to @initiative, :notice => 'Initiative was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render :json =>  @initiative.errors, status: :unprocessable_entity }
+        format.json { render :json =>  @initiative.errors, :status => :unprocessable_entity }
       end
     end
   end
