@@ -14,18 +14,6 @@ class UsersController < ApplicationController
     end
   end
   
-  # GET /users/new
-  # GET /users/new.xml                                            
-  # GET /users/new.json                                    HTML AND AJAX
-  #-------------------------------------------------------------------
-  def new
-     authorize! :index, @user, :message => 'Not authorized as an administrator.'
-    respond_to do |format|
-      format.json { render :json => @user }   
-      format.xml  { render :xml => @user }
-      format.html
-    end
-  end
   
   def show
     authorize! :index, @user, :message => 'Not authorized as an administrator.'
