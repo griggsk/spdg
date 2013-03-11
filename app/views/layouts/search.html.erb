@@ -18,7 +18,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">State Profile Initiatives</a>
+          <a class="brand" href="/search">State Profile Initiatives</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
             </ul>
@@ -39,6 +39,7 @@
       <footer>
         <p>&copy; SigNetwork 2013 |  
         		<% if user_signed_in? %>
+        			 <%= link_to "SPDG Toolkit", root_path %> |
 				   	 <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
 				  <% else %>
 				  		<%= link_to('Login', new_user_session_path)  %> 
