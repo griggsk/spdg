@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "SPDG Initiatives" %></title>
     <%= csrf_meta_tags %>
-]  </head>
+     <%= stylesheet_link_tag "application", :media => "all" %>
+   </head>
   <body>
 
     <div class="navbar navbar-fluid-top">
@@ -47,7 +48,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
-     <%= javascript_include_tag "dataTables" %>
+    <%= javascript_include_tag "dataTables" %>
 
   </body>
 </html>
