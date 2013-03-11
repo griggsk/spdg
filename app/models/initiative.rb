@@ -12,6 +12,4 @@ class Initiative < ActiveRecord::Base
      state.contact
   end
   
-  def implementationstages
-  end
 end
