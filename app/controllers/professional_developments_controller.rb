@@ -25,7 +25,7 @@ class ProfessionalDevelopmentsController < ApplicationController
   # GET /professionaldevelopments/new
   # GET /professionaldevelopments/new.json
   def new
-    @professional_development = Professionaldevelopment.new
+    @professional_developments = Professionaldevelopment.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,13 +35,13 @@ class ProfessionalDevelopmentsController < ApplicationController
 
   # GET /professionaldevelopments/1/edit
   def edit
-    @professional_development = Professionaldevelopment.find(params[:id])
+    @professional_developments = Professionaldevelopment.find(params[:id])
   end
 
   # POST /professionaldevelopments
   # POST /professionaldevelopments.json
   def create
-    @professional_development = Professionaldevelopment.new(params[:professionaldevelopment])
+    @professional_developments = Professionaldevelopment.new(params[:professionaldevelopment])
 
     respond_to do |format|
       if @professional_development.save
@@ -57,7 +57,7 @@ class ProfessionalDevelopmentsController < ApplicationController
   # PUT /professionaldevelopments/1
   # PUT /professionaldevelopments/1.json
   def update
-    @professional_development = Professionaldevelopment.find(params[:id])
+    @professional_developments = Professionaldevelopment.find(params[:id])
 
     respond_to do |format|
       if @professional_development.update_attributes(params[:professionaldevelopment])
