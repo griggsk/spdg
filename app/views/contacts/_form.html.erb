@@ -1,5 +1,5 @@
 <%= form_for @contact, :html => { :class => 'form-horizontal' } do |f| %>
-	<%= render partial: "layout/messages", :flash => flash %> 
+	<%= render partial: "layout/messages", :flash => :flash %> 
   <div class="control-group">
     <%= f.label :first, :class => 'control-label' %>
     <div class="controls">
