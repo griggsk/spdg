@@ -76,7 +76,12 @@ class InitiativesController < ApplicationController
   # PUT /initiatives/1.json
   def update
     @initiative = Initiative.find(params[:id])
-
+    @states = State.all
+    @topics = Topic.all
+    @populations = Population.all
+    @pds = Professionaldevelopment.all
+    @stages = Stage.all
+    
     respond_to do |format|
       if @initiative.update_attributes(params[:initiative])
         format.html { redirect_to @initiative, :notice => 'Initiative was successfully updated.' }

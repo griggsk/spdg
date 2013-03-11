@@ -26,5 +26,5 @@ module ApplicationHelper
      'No Contact'
     end
   end 
-   
+  
 end
