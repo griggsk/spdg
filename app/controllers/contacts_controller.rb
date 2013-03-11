@@ -44,7 +44,7 @@ class ContactsController < ApplicationController
   # POST /contacts.json
   def create
     @contact = Contact.new(params[:contact])
-
+    @states = State.all
     respond_to do |format|
       if @contact.save
         format.html { redirect_to @contact, :notice => 'Contact was successfully created.' }
@@ -60,7 +60,7 @@ class ContactsController < ApplicationController
   # PUT /contacts/1.json
   def update
     @contact = Contact.find(params[:id])
-
+    @states = State.all
     respond_to do |format|
       if @contact.update_attributes(params[:contact])
         format.html { redirect_to @contact, :notice => 'Contact was successfully updated.' }
