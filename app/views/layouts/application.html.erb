@@ -21,15 +21,6 @@
           <a class="brand" href="/">SPDG Toolkit</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
-              	 <% if user_signed_in? %>
-				     <li>
-				   	 <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
-				  	</li>
-				  <% else %>
-				  	<li>
-				  		<%= link_to('Login', new_user_session_path)  %> 
-				  	</li>
-				  <% end %>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -50,14 +41,18 @@
           <div class="well sidebar-nav">
            <ul class="nav nav-list">
             <% if user_signed_in? %>
-            	<li>
-				    Signed in as <%= current_user.email %>
-				</li>
+			     <li>
+			   	 <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+			  	</li>
 				<li>
 				  <%= link_to('Edit Account', edit_registration_path(current_user)) %>
 				</li>
 			<% else %>
+				  <li>
+				  	<%= link_to('Login', new_user_session_path)  %> 
+				  </li>
 				  <li><%= link_to('Sign-Up', new_user_registration_path) %></li>
+				  
 			<% end %>
 			</ul>
 		  </div><!--/.well -->
