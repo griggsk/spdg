@@ -21,18 +21,6 @@
           <a class="brand" href="#">State Profile Initiatives</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
-              	 <% if user_signed_in? %>
-              	 	<li>
-				    	Signed in as <%= current_user.email %>
-				    </li>
-				     <li>
-				   	 <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-				  	</li>
-				  <% else %>
-				  	<li>
-				  		<%= link_to('Login', new_user_session_path)  %> 
-				  	</li>
-				  <% end %>
             </ul>
             </ul>
           </div><!--/.nav-collapse -->
@@ -49,7 +37,13 @@
       </div><!--/row-->
 
       <footer>
-        <p>&copy; SigNetwork 2013</p>
+        <p>&copy; SigNetwork 2013 |  
+        		<% if user_signed_in? %>
+				   	 <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+				  <% else %>
+				  		<%= link_to('Login', new_user_session_path)  %> 
+				  <% end %>
+         </p>
       </footer>
 
     </div> <!-- /container -->
