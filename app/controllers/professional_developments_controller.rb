@@ -14,42 +14,42 @@ class ProfessionalDevelopmentsController < ApplicationController
   # GET /professionaldevelopments/1
   # GET /professionaldevelopments/1.json
   def show
-    @professionaldevelopment = Professionaldevelopment.find(params[:id])
+    @professional_development = Professionaldevelopment.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render :json =>  @professionaldevelopment }
+      format.json { render :json =>  @professional_development }
     end
   end
 
   # GET /professionaldevelopments/new
   # GET /professionaldevelopments/new.json
   def new
-    @professionaldevelopment = Professionaldevelopment.new
+    @professional_development = Professionaldevelopment.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render :json =>  @professionaldevelopment }
+      format.json { render :json =>  @professional_development }
     end
   end
 
   # GET /professionaldevelopments/1/edit
   def edit
-    @professionaldevelopment = Professionaldevelopment.find(params[:id])
+    @professional_development = Professionaldevelopment.find(params[:id])
   end
 
   # POST /professionaldevelopments
   # POST /professionaldevelopments.json
   def create
-    @professionaldevelopment = Professionaldevelopment.new(params[:professionaldevelopment])
+    @professional_development = Professionaldevelopment.new(params[:professionaldevelopment])
 
     respond_to do |format|
-      if @professionaldevelopment.save
-        format.html { redirect_to @professionaldevelopment, :notice => 'Professionaldevelopment was successfully created.' }
-        format.json { render :json =>  @professionaldevelopment, :status => :created, :location => @professionaldevelopment }
+      if @professional_development.save
+        format.html { redirect_to @professional_development, :notice => 'Professionaldevelopment was successfully created.' }
+        format.json { render :json =>  @professional_development, :status => :created, :location => @professional_development }
       else
         format.html { render :action => "new" }
-        format.json { render :json =>  @professionaldevelopment.errors, :status => :unprocessable_entity }
+        format.json { render :json =>  @professional_development.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -57,15 +57,15 @@ class ProfessionalDevelopmentsController < ApplicationController
   # PUT /professionaldevelopments/1
   # PUT /professionaldevelopments/1.json
   def update
-    @professionaldevelopment = Professionaldevelopment.find(params[:id])
+    @professional_development = Professionaldevelopment.find(params[:id])
 
     respond_to do |format|
-      if @professionaldevelopment.update_attributes(params[:professionaldevelopment])
-        format.html { redirect_to @professionaldevelopment, :notice => 'Professionaldevelopment was successfully updated.' }
+      if @professional_development.update_attributes(params[:professionaldevelopment])
+        format.html { redirect_to @professional_development, :notice => 'Professionaldevelopment was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }
-        format.json { render :json =>  @professionaldevelopment.errors, :status => :unprocessable_entity }
+        format.json { render :json =>  @professional_development.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -73,8 +73,8 @@ class ProfessionalDevelopmentsController < ApplicationController
   # DELETE /professionaldevelopments/1
   # DELETE /professionaldevelopments/1.json
   def destroy
-    @professionaldevelopment = Professionaldevelopment.find(params[:id])
-    @professionaldevelopment.destroy
+    @professional_development = Professionaldevelopment.find(params[:id])
+    @professional_development.destroy
 
     respond_to do |format|
       format.html { redirect_to professionaldevelopments_url }

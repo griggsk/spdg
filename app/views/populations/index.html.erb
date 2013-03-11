@@ -16,7 +16,7 @@
       <tr>
         <td><%= link_to population.id, population_path(population) %></td>
         <td><%= population.target %></td>
-        <td><%=l population.created_at %></td>
+        <td><%= population.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_population_path(population), :class => 'btn btn-mini' %>
