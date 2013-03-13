@@ -18,6 +18,20 @@
 /* Default class modification */
 /* Set the defaults for DataTables initialisation */
 
+/* Formating function for row details */
+function fnFormatDetails ( oTable, nTr )
+{
+    var aData = oTable.fnGetData( nTr );
+    var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">';
+    sOut += '<tr><td>Rendering engine:</td><td>'+aData[1]+' '+aData[4]+'</td></tr>';
+    sOut += '<tr><td>Link to source:</td><td>Could provide a link here</td></tr>';
+    sOut += '<tr><td>Extra info:</td><td>And any further details here (images etc)</td></tr>';
+    sOut += '</table>';
+     
+    return sOut;
+}
+
+
 function fnCreateSelect( aData )
 {
     var r='<select><option value=""></option>', i, iLen=aData.length;
@@ -181,6 +195,28 @@ if ( $.fn.DataTable.TableTools ) {
 var asInitVals = new Array();
 $(document).ready(function(){
 	
+	/*
+     * Insert a 'details' column to the table
+     */
+    var nCloneTh = document.createElement( 'th' );
+    var nCloneTd = document.createElement( 'td' );
+    nCloneTd.innerHTML = '<img src="/images/details_open.png">';
+    nCloneTd.className = "center";
+     
+    $('#data thead tr').each( function () {
+        this.insertBefore( nCloneTh, this.childNodes[0] );
+    } );
+    
+    $('#data tfoot tr').each( function () {
+        this.insertBefore( nCloneTh, this.childNodes[0] );
+    } );
+
+     
+    $('#data tbody tr').each( function () {
+        this.insertBefore(  nCloneTd.cloneNode( true ), this.childNodes[0] );
+    } );
+    
+	
      var oTable = $('#data').dataTable( {
 		"sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
 		"sPaginationType": "bootstrap",
@@ -188,13 +224,32 @@ $(document).ready(function(){
 			"sLengthMenu": "_MENU_ records per page"
 		},
 		"aoColumnDefs": [
-                        { "bVisible": false, "aTargets": [ 7,8 ] }
-
-                    ] 
+                        { "bVisible": false, "aTargets": [ 8,9 ] },
+                        { "bSortable": false, "aTargets": [ 0 ] }
+                        ] 
 	} );
     
-     
-     /* Add a select menu for each TH element in the table footer */
+     /* Add event listener for opening and closing details
+     * Note that the indicator for showing which row is open is not controlled by DataTables,
+     * rather it is done here
+     */
+    $('#data tbody td img').live('click', function () {
+        var nTr = $(this).parents('tr')[0];
+        if ( oTable.fnIsOpen(nTr) )
+        {
+            /* This row is already open - close it */
+            this.src = "/images/details_open.png";
+            oTable.fnClose( nTr );
+        }
+        else
+        {
+            /* Open this row */
+            this.src = "/images/details_close.png";
+            oTable.fnOpen( nTr, fnFormatDetails(oTable, nTr), 'details' );
+        }
+    } );
+    
+     /* Add a select menu for each TH element in the table header */
     $("thead th").each( function ( i ) {
         $('select', this).change( function () {
             oTable.fnFilter( $(this).val(), i );

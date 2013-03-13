@@ -7,37 +7,37 @@
     <title><%= content_for?(:title) ? yield(:title) : "State Grantee Profiles" %></title>
      <%= csrf_meta_tags %>
      <%= stylesheet_link_tag "application", :media => "all" %>
+     <%= stylesheet_link_tag "sig_styles", :media => "all" %>
    </head>
   <body>
 
     <div class="navbar navbar-fluid-top">
-      <div class="navbar-inner">
         <div class="container-fluid">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="/search">State Profile Initiatives</a>
-          <div class="container-fluid nav-collapse">
             <ul class="nav">
+            	<li><a class="brand" href="/search"><%= image_tag("SIGlogo.png")%></a> </li>
+            	<li><a class="" href="/search">SPDG Initiatives</a></li>
             </ul>
-            </ul>
-          </div><!--/.nav-collapse -->
         </div>
-      </div>
     </div>
 
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span12">
-          <%= bootstrap_flash %>
-          <%= yield %>
+	        <div class="base_content">
+	          <%= bootstrap_flash %>
+	          <%= yield %>
+	       </div>
         </div>
       </div><!--/row-->
 
       <footer>
-        <p>&copy; SigNetwork 2013 |  
+        <p>&copy; 2013  This website and the accompanying SigServe is managed by
+				<a href="http://wrrc.uoregon.edu/tacs/" target="_blank">Technical Assistance and Consulting Services</a>
+				at the
+				<a target="_blank" href="http://www.uoregon.edu/">University of Oregon</a>
+				and financially supported by SPDG projects.
+	    </p>
+		<p>
         		<% if user_signed_in? %>
         			 <%= link_to "SPDG Toolkit", "/" %> |
 				   	 <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
