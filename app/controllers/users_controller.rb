@@ -59,7 +59,7 @@ class UsersController < ApplicationController
  
     respond_to do |format|
       if @user.errors[:base].empty? and @user.update_attributes(params[:user])
-        flash[:notice] = "Your account has been updated"
+        flash[:notice] = "The account has been updated"
         format.json { render :json => @user.to_json, :status => 200 }
         format.xml  { head :ok }
         format.html { render :action => :edit }
@@ -71,27 +71,6 @@ class UsersController < ApplicationController
     end
   end
     
- # POST /users
-  # POST /users.xml         
-  # POST /users.json                                      HTML AND AJAX
-  #-----------------------------------------------------------------
-  def create
-    @user = User.new(params[:user])
- 
-    if @user.save
-      respond_to do |format|
-        format.json { render :json => @user.to_json, :status => 200 }
-        format.xml  { head :ok }
-        format.html { redirect_to :action => :index }
-      end
-    else
-      respond_to do |format|
-        format.json { render :text => "Could not create user", :status => :unprocessable_entity } # placeholder
-        format.xml  { head :ok }
-        format.html { render :action => :new, :status => :unprocessable_entity }
-      end
-    end
-  end
         
   def become
     return unless current_user.is_an_admin?

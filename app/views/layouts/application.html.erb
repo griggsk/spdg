@@ -10,22 +10,14 @@
   </head>
   <body>
 
-    <div class="navbar navbar-fluid-top">
-      <div class="navbar-inner">
+  <div class="navbar navbar-fluid-top">
         <div class="container-fluid">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="/">SPDG Toolkit</a>
-          <div class="container-fluid nav-collapse">
             <ul class="nav">
+            	<li><a class="brand" href=""><%= image_tag("SIGlogo.png")%></a> </li>
+            	<li><a class="" href="/search">SPDG Initiatives</a></li> 
             </ul>
-          </div><!--/.nav-collapse -->
         </div>
-      </div>
-    </div>
+   </div>
 
     <div class="container-fluid">
       <div class="row-fluid">
@@ -34,7 +26,6 @@
             <ul class="nav nav-list">
               <li><%= link_to "Manage Contacts", contacts_path  %></li>
               <li><%= link_to "Manage Initiatives", initiatives_path  %></li>
-              <li><%= link_to "Search Initiatives", search_index_path  %></li>
               <li><%= link_to "Administration", home_admin_path  %></li>
             </ul>
           </div><!--/.well -->
@@ -51,15 +42,15 @@
 				  <li>
 				  	<%= link_to('Login', new_user_session_path)  %> 
 				  </li>
-				  <li><%= link_to('Sign-Up', new_user_registration_path) %></li>
-				  
 			<% end %>
 			</ul>
 		  </div><!--/.well -->
         </div><!--/span-->
         <div class="span9">
-          <%= bootstrap_flash %>
-          <%= yield %>
+          <div class="base_content">	
+          	<%= bootstrap_flash %>
+          	<%= yield %>
+          </div>
         </div>
       </div><!--/row-->
 

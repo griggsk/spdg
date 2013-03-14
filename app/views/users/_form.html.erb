@@ -7,20 +7,6 @@
     </div>
   </div>
    
-   <div class="control-group">
-    <%= f.label :password, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.password_field :password, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :password_confirmation, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.password_field :password_confirmation, :class => 'text_field' %>
-    </div>
-  </div>
-  
-<% if can? :read, User %>
  <div class="control-group">
      	<% @accessible_roles.each do |role| %>
 			      <label for="role_<%=role%>" class ='control-label'><%= role.humanize %>
@@ -28,7 +14,6 @@
 			     </label>
 		<% end %>
   </div>
-<% end %>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
