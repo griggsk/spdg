@@ -7,6 +7,7 @@
     <title><%= content_for?(:title) ? yield(:title) : "SPDG" %></title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= init_tinymce_hammer_if_required %>
   </head>
   <body>
 
@@ -14,7 +15,7 @@
         <div class="container-fluid">
             <ul class="nav">
             	<li><a class="brand" href=""><%= image_tag("SIGlogo.png")%></a> </li>
-            	<li><a class="" href="/search">SPDG Initiatives</a></li> 
+            	<li><a class="" href="/">SPDG Initiative Database</a></li> 
             </ul>
         </div>
    </div>
@@ -26,7 +27,7 @@
             <ul class="nav nav-list">
               <li><%= link_to "Manage Contacts", contacts_path  %></li>
               <li><%= link_to "Manage Initiatives", initiatives_path  %></li>
-              <li><%= link_to "Administration", home_admin_path  %></li>
+              <li><%= link_to "Administration", toolkit_admin_path  %></li>
             </ul>
           </div><!--/.well -->
           <div class="well sidebar-nav">

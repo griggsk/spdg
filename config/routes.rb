@@ -20,14 +20,11 @@ Profiles::Application.routes.draw do
   
   resources :implementations
   
-  resources :search
+  resources :home
 
-  get "search/index"
-  
-  
-  get "home/index"
+  get "toolkit/index"
 
-  get "home/admin"
+  get "toolkit/admin"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

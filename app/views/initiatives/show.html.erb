@@ -1,27 +1,31 @@
 <%- model_class = Initiative -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+  <h1><%= @initiative.name %></h1>
 </div>
 
 <dl class="dl-horizontal">
+  <dt><strong>Contact:</strong></dt>
+  <dd><%= display_contact(@initiative.contact)  %></dd>
   <dt><strong><%= model_class.human_attribute_name(:state_id) %>:</strong></dt>
   <dd><%= @initiative.state.name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:start_year) %>:</strong></dt>
-  <dd><%= @initiative.start_year %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:end_year) %>:</strong></dt>
-  <dd><%= @initiative.end_year %></dd>
-  <dt><strong>Topics:</strong></dt>
-  <dd><%= @initiative.topics.collect(&:name).join(",") %></dd>
-  <dt><strong>Populations:</strong></dt>
-  <dd><%= @initiative.populations.collect(&:target).join(",") %></dd>
-  <dt><strong>Professional Developments:</strong></dt>
-  <dd><%= @initiative.professionaldevelopments.collect(&:name).join(",") %></dd>
-   <dt><strong>Contact:</strong></dt>
-  <dd><%= display_contact(@initiative.contact)  %></dd>
+  <dt><strong>Years:</strong></dt>
+  <dd><%= @initiative.start_year %>-<%= @initiative.end_year %></dd>
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-  <dd><%= @initiative.description %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:resources) %>:</strong></dt>
-  <dd><%= @initiative.resources %></dd>
+  <dd><%= @initiative.description.html_safe %></dd>
+  <dt><strong>Topics:</strong></dt>
+  <dd><%= @initiative.topics.collect(&:name).join(", ") %></dd>
+  <dt><strong>Populations:</strong></dt>
+  <dd><%= @initiative.populations.collect(&:target).join(", ") %></dd>
+  <dt><strong>PD Receivers:</strong></dt>
+  <dd><%= @initiative.professionaldevelopments.collect(&:name).join(", ") %></dd>
+  <dt><strong>Stages:</strong></dt>
+  <% @initiative.implementations.each do |implementation| %>
+  		<ul>
+	  		<li><%= implementation.year%>:
+	  		<%= implementation.stages.collect(&:name).join(", ") %>
+	  		</li>
+  		</ul>
+  <%end%>
 </dl>
 
 <div class="form-actions">

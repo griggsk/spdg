@@ -1,0 +1,50 @@
+<%- model_class = Initiative -%>
+<div class="page-header">
+  <h1><%= @initiative.name %> Profile </h1>
+</div>
+<div class="row-fluid">
+	<div class="span8">
+	<dl>
+	  <dt><strong><%= model_class.human_attribute_name(:state_id) %></strong></dt>
+	  <dd><%= @initiative.state.name %></dd>
+	  <dt><strong>Year</strong></dt>
+	  <dd><%= @initiative.start_year %> - 
+	  	  <%= @initiative.end_year %></dd>
+	  <dt><strong>Initiative Topics</strong></dt>
+	  <dd><%= @initiative.topics.collect(&:name).join(", ") %></dd>
+	  <dt><strong>Population Targets</strong></dt>
+	  <dd><%= @initiative.populations.collect(&:target).join(", ") %></dd>
+	  <dt><strong>Professional Development Receivers</strong></dt>
+	  <dd><%= @initiative.professionaldevelopments.collect(&:name).join(", ") %></dd>
+	  <dt><strong>Implementation Stages</strong></dt>
+	  <% @initiative.implementations.each do |implementation| %>
+	  	<dd><%= implementation.year%>:
+	  		<%= implementation.stages.collect(&:name).join(", ") %>
+	  	</dd>
+	  <%end%>
+	  <dt><strong>Contact</strong></dt>
+	  <dd><%= email_link(@initiative.contact)  %></dd>
+	  <dt><strong><%= model_class.human_attribute_name(:description) %></strong></dt>
+	  <dd><%= @initiative.description.html_safe %></dd>
+	</dl>
+	</div>
+	<div class="span4">
+		 <div class="well sidebar-nav">
+		 	<h3><%=@initiative.state.name%> Initiatives</h3>
+            <ul class="nav nav-list">
+            	 <% @initiatives.each do |initiative| %>
+            	 	<li> <%= link_to initiative.name, home_path(initiative) %></li>
+            	 <%end%>
+            </ul>
+          </div>
+	</div>
+</div>
+<div class="form-actions">
+	Updated: <%=l @initiative.updated_at, :format => :long%>. Outdated or incorrect information? Please <a href="">contact us</a>. 
+	
+	 <% if user_signed_in? && current_user.role === 'admin' %>
+	 	<hr>
+		  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+		              edit_initiative_path(@initiative), :class => 'btn' %>
+	<% end %>
+</div>

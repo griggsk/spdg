@@ -7,8 +7,6 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -17,8 +15,6 @@
       <tr>
         <td><%= link_to stage.id, stage_path(stage) %></td>
         <td><%= stage.name %></td>
-        <td><%= stage.description %></td>
-        <td><%=l stage.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_stage_path(stage), :class => 'btn btn-mini' %>
