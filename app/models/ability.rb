@@ -6,7 +6,6 @@ class Ability
     if user.role == "admin"
           can :manage, :all 
           can :read, User
-    elsif user.role? :guest
     end
     # Define abilities for the passed in user here. For example:
     #
