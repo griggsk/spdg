@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
     if resource.is_a?(User) && resource.admin?
       toolkit_index_path
     else
-      root_path
+      root
     end
   end
 end
