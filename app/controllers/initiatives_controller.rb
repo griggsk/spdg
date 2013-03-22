@@ -4,8 +4,9 @@ class InitiativesController < ApplicationController
   # GET /initiatives
   # GET /initiatives.json
   def index
+    authorize! :index, @user, :message => 'Not authorized as an administrator.'
     @initiatives = Initiative.all
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json =>  @initiatives }

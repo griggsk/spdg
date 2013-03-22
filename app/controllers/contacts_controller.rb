@@ -4,6 +4,7 @@ class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.json
   def index
+    authorize! :index, @user, :message => 'Not authorized as an administrator.'
     @contacts = Contact.all
 
     respond_to do |format|
