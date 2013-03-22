@@ -51,11 +51,7 @@ class UsersController < ApplicationController
   end
   
   def update
-     if params[:user][:password].blank?
-      [:password,:password_confirmation,:current_password].collect{|p| params[:user].delete(p) }
-     else
-      @user.errors[:base] << "The password you entered is incorrect" unless @user.valid_password?(params[:user][:current_password])
-     end
+    @user.errors[:base] << "The password you entered is incorrect" unless @user.valid_password?(params[:user][:current_password])
  
     respond_to do |format|
       if @user.errors[:base].empty? and @user.update_attributes(params[:user])
