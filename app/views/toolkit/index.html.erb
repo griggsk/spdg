@@ -1,7 +1,7 @@
 <h1>SPDG Initiative Database Toolkit</h1>
  <% if user_signed_in? %>
  	<p>Hello <%= current_user.email %></p>
- 	<% if current_user.guest? %>
+ 	<% if current_user.role == 'guest' %>
  	<p>Your account is awaiting approval.</p>
  	<% end %>
 <% else %>
