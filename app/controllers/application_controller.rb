@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
   # Overwriting the sign_out redirect path method
   def after_sign_in_path_for(resource)
     stored_location_for(resource) ||
-    if resource.is_a?(User) && resource.admin?
+    if resource.is_a?(User) && resource.role == 'admin'
       toolkit_index_path
     else
       root
