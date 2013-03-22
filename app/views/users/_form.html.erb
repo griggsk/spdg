@@ -10,7 +10,7 @@
  <div class="control-group">
      	<% @accessible_roles.each do |role| %>
 			      <label for="role_<%=role%>" class ='control-label'><%= role.humanize %>
-			      <%= radio_button_tag 'user_role', role, @user.role == role %>
+			      <%= radio_button_tag 'user', role, @user.role == role %>
 			     </label>
 		<% end %>
   </div>
