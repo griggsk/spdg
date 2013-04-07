@@ -28,8 +28,9 @@ end
   gem 'jquery-rails'
   gem 'cancan'
   gem 'devise'
-  gem "nested_form"
-
+  gem 'nested_form'
+  gem 'redactor-rails'
+  
 # gem 'activerecord-mysql-adapter'
 
 # To use ActiveModel has_secure_password

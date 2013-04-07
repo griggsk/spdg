@@ -29,7 +29,7 @@
 	<div class="span4">
 		<% if @initiatives.count > 0 %>
 		 <div class="well sidebar-nav">
-		 	<h3><%=@initiative.state.name%> Initiatives</h3>
+		 	<h3>More <%=@initiative.state.name%> Initiatives</h3>
             <ul class="nav nav-list">
             	 <% @initiatives.each do |initiative| %>
             	 	<li> <%= link_to initiative.name, home_path(initiative) %></li>

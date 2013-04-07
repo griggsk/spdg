@@ -33,6 +33,10 @@ h3 {
 
 h4 { color: #D0E621; }
 
+h1, h2, h3, h4 {
+	line-height: 1.1;
+	margin: 5px 0 7px;
+}
 label {
 	font-weight: 700;
 }
@@ -139,5 +143,7 @@ table.table thead .sorting_asc {
 table.table thead .sorting {
     background: url("images/sort_both.png") no-repeat scroll right top transparent;
 }
-}
 
+.well {
+	padding: 1em 1.5em;
+}

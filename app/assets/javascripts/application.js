@@ -15,6 +15,7 @@
 //= require twitter/bootstrap
 //= require_tree .
 //= require jquery_nested_form
+//= require redactor-rails
 /* Default class modification */
 /* Set the defaults for DataTables initialisation */
 

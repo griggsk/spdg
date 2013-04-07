@@ -6,7 +6,8 @@ class UsersController < ApplicationController
  
   def index
     authorize! :index, @user, :message => 'Not authorized as an administrator.'
-    @users = User.accessible_by(current_ability, :index).limit(20)
+    @users = User.accessible_by(current_ability, :index)
+    
     respond_to do |format|
       format.json { render :json => @users }
       format.xml  { render :xml => @users }
@@ -58,10 +59,8 @@ class UsersController < ApplicationController
  
     respond_to do |format|
       if @user.errors[:base].empty? and @user.update_attributes(params[:user])
-        flash[:notice] = "The account has been updated"
-        format.json { render :json => @user.to_json, :status => 200 }
-        format.xml  { head :ok }
-        format.html { render :action => :edit }
+        format.html { redirect_to @user, :notice => 'The account has been updated.' }
+        format.json { head :no_content }
       else
         format.json { render :text => "Could not update user", :status => :unprocessable_entity } #placeholder
         format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }

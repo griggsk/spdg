@@ -12,11 +12,4 @@ class Initiative < ActiveRecord::Base
      state.contact
   end
   
-  def get_implementations
-    imps = Hash.new
-    implementations.each do |implementation|
-        imps[implementation.year] = implementation.stages.collect(&:name).join(", ")
-    end
-  end
-  
 end

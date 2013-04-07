@@ -19,24 +19,25 @@ ActiveRecord::Schema.define(:version => 201302110643513) do
     t.string   "email"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "contacts_states", :id => false, :force => true do |t|
-    t.integer "contact_id"
-    t.integer "state_id"
+    t.integer  "state_id",   :null => false
   end
 
   create_table "implementations", :force => true do |t|
     t.integer  "initiative_id"
     t.integer  "year"
-    t.integer  "stage_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
 
-  add_index "implementations", ["stage_id"], :name => "index_implementations_on_stage_id"
+  create_table "implementations_stages", :id => false, :force => true do |t|
+    t.integer "implementation_id", :null => false
+    t.integer "stage_id",          :null => false
+  end
+
+  add_index "implementations_stages", ["implementation_id", "stage_id"], :name => "implementation_id", :unique => true
 
   create_table "initiatives", :force => true do |t|
+    t.string   "name",        :null => false
     t.integer  "state_id"
     t.integer  "start_year"
     t.integer  "end_year"
@@ -73,6 +74,23 @@ ActiveRecord::Schema.define(:version => 201302110643513) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "redactor_assets", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "data_file_name",                  :null => false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    :limit => 30
+    t.string   "type",              :limit => 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
+  add_index "redactor_assets", ["assetable_type", "assetable_id"], :name => "idx_redactor_assetable"
+  add_index "redactor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_redactor_assetable_type"
 
   create_table "stages", :force => true do |t|
     t.string   "name"
