@@ -5,7 +5,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:target) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -13,8 +12,7 @@
   <tbody>
     <% @populations.each do |population| %>
       <tr>
-        <td><%= link_to population.id, population_path(population) %></td>
-        <td><%= population.target %></td>
+        <td><%= link_to population.target, population_path(population) %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_population_path(population), :class => 'btn btn-mini' %>

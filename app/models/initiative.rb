@@ -12,24 +12,10 @@ class Initiative < ActiveRecord::Base
      state.contact
   end
   
-  def must_have_at_least_one_topic
-    if topics.count < 1
-      errors.add(:base, 'You must select at least one implementation topic') 
-      return false
-    end
-  end
-  
-  def must_have_at_least_one_population
-    if populations.count < 1
-     errors.add(:base, 'You must select at least one population target') 
-     return false
-    end
-  end
-  
-  def must_have_at_least_one_pd
-    if professionaldevelopments.count < 1
-      errors.add(:base, 'You must select at least one pd receiver')
-      return false
+  def get_implementations
+    imps = Hash.new
+    implementations.each do |implementation|
+        imps[implementation.year] = implementation.stages.collect(&:name).join(", ")
     end
   end
   

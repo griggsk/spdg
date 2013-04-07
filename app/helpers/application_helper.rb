@@ -13,7 +13,7 @@ module ApplicationHelper
   
   def display_contact(contact)
     if(contact)
-      mail_to contact.name, contact.email
+     link_to contact.name, contact_path(contact)
     else
      link_to 'Add Contact', new_contact_path
     end
@@ -21,11 +21,12 @@ module ApplicationHelper
   
   def email_link(contact)
     if(contact)
-      link_to contact.name, contact_path(contact)
+      mail_to contact.email, contact.name, :encode => "javascript"
     else
      'No Contact'
     end
   end 
+  
   
   def flash_class(level)
     case level

@@ -20,11 +20,7 @@
   <dd><%= @initiative.professionaldevelopments.collect(&:name).join(", ") %></dd>
   <dt><strong>Stages:</strong></dt>
   <% @initiative.implementations.each do |implementation| %>
-  		<ul>
-	  		<li><%= implementation.year%>:
-	  		<%= implementation.stages.collect(&:name).join(", ") %>
-	  		</li>
-  		</ul>
+	  		<dd><%= implementation.year%>: <%= implementation.stages.collect(&:name).join(", ") %></dd>
   <%end%>
 </dl>
 

@@ -132,5 +132,12 @@ dd {
 	margin-bottom: 7px;
 }
 
+table.table thead .sorting_asc {
+	background: url("images/sort_asc.png") no-repeat scroll right top transparent;
+}
 
+table.table thead .sorting {
+    background: url("images/sort_both.png") no-repeat scroll right top transparent;
+}
+}
 
