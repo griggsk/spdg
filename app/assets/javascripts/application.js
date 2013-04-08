@@ -13,9 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require_tree .
+//= require ckeditor-jquery
 //= require jquery_nested_form
-//= require redactor-rails
+//= require dataTables
+//= require_tree .
 /* Default class modification */
 /* Set the defaults for DataTables initialisation */
 

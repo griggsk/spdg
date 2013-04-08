@@ -29,8 +29,8 @@ end
   gem 'cancan'
   gem 'devise'
   gem 'nested_form'
-  gem 'redactor-rails'
-  
+  gem "ckeditor_rails"
+    
 # gem 'activerecord-mysql-adapter'
 
 # To use ActiveModel has_secure_password
