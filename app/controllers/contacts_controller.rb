@@ -5,7 +5,7 @@ class ContactsController < ApplicationController
   # GET /contacts.json
   def index
     authorize! :index, @user, :message => 'Not authorized as an administrator.'
-    @contacts = Contact.all
+    @contacts = Contact.all(:joins => :state, :order => 'states.abbrev')
 
     respond_to do |format|
       format.html # index.html.erb

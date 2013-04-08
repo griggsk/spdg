@@ -99,7 +99,7 @@ label {
 footer p{
  font-size: 11px;	
 }
-.footer a, footer a { color: #D0E621; }
+.footer a, footer a, footer a:hover { color: #D0E621; }
 
 .brand img {
 	width: 75%;

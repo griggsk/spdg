@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
    def index
-    @initiatives = Initiative.all
+    @initiatives = Initiative.all(:joins => :state, :order => 'states.abbrev')
     @states = State.all
     @topics = Topic.all
     @populations = Population.all

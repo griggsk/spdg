@@ -5,18 +5,18 @@
 <table class="table table-striped">
   <thead>
     <tr>
+       <th>State</th>	
       <th>Name</th>
       <th><%= model_class.human_attribute_name(:email) %></th>
-      <th>State</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @contacts.each do |contact| %>
       <tr>
+      	<td><%= contact.state.abbrev %></td>
         <td><%= link_to contact.name, contact_path(contact) %></td>
         <td><%= contact.email %></td>
-         <td><%= contact.state.abbrev %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_contact_path(contact), :class => 'btn btn-mini' %>
