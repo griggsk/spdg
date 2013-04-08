@@ -147,3 +147,6 @@ table.table thead .sorting {
 .well {
 	padding: 1em 1.5em;
 }
+.info {
+	white-space: nowrap;
+}

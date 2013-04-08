@@ -186,7 +186,7 @@ $(document).ready(function(){
 		},
 		"aoColumnDefs": [
                         { "bVisible": false, "aTargets": [ 7, 8] },
-                        { "bSortable": false, "aTargets": [ 6 ] }
+                        { "bSortable": false, "aTargets": [ 0 ] }
                         ] 
 	} );
     
