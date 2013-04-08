@@ -15,14 +15,14 @@
 	  <dt><strong><%= model_class.human_attribute_name(:description) %></strong></dt>
 	  <dd><%= @initiative.description.html_safe %></dd>	  
 	  <dt><strong>Initiative Topics</strong></dt>
-	  <dd><%= @initiative.topics.collect(&:name).join(", ") %></dd>
+	  <dd><%= @initiative.topics.collect(&:name).join(" & ") %></dd>
 	  <dt><strong>Population Targets</strong></dt>
-	  <dd><%= @initiative.populations.collect(&:target).join(", ") %></dd>
+	  <dd><%= @initiative.populations.collect(&:target).join(" & ") %></dd>
 	  <dt><strong>Professional Development Receivers</strong></dt>
-	  <dd><%= @initiative.professionaldevelopments.collect(&:name).join(", ") %></dd>
+	  <dd><%= @initiative.professionaldevelopments.collect(&:name).join(" & ") %></dd>
 	  <dt><strong>Implementation Stages</strong></dt>
 	  <% @initiative.implementations.each do |implementation| %>
-  			<dd><%= implementation.year %>: <%= implementation.stages.collect(&:name).join(", ") %></dd>
+  			<dd><%= implementation.year %>: <%= implementation.stages.collect(&:name).join(" & ") %></dd>
   	  <%end%>
 	</dl>
 	</div>

@@ -30,17 +30,16 @@
     <% @initiatives.each do |initiative| %>
       <tr>
       	<td>
-  			 <%= link_to 'view <i class="icon-info-sign"></i>'.html_safe, home_path(initiative), :class => 'btn btn-mini btn-warning info' %>
+  			 <%= link_to 'view'.html_safe, home_path(initiative), :class => 'btn btn-mini btn-warning info' %>
   		</td>
       	<td><%= initiative.start_year %></td>
         <td><abbr title="<%= initiative.state.name %>"><%= initiative.state.abbrev %></abbr></td>
-        <td><%= initiative.topics.collect(&:name).join(", ") %></td>
-        <td><%= initiative.populations.collect(&:target).join(", ") %></td>
-        <td><%= initiative.professionaldevelopments.collect(&:name).join(", ") %></td>
+        <td><%= initiative.topics.collect(&:name).join(" & ") %></td>
+        <td><%= initiative.populations.collect(&:target).join(" & ") %></td>
+        <td><%= initiative.professionaldevelopments.collect(&:name).join(" & ") %></td>
         <td>
         	<% initiative.implementations.each do |implementation| %>
-  				<%= implementation.year %>: <%= implementation.stages.collect(&:name).join(", ") %>
-  				<%= "-" unless implementation == initiative.implementations.last %>
+  				<%= implementation.year %>: <%= implementation.stages.collect(&:name).join(" & ") %><%= ", " unless implementation == initiative.implementations.last %>
   			<%end%>
   		</td>
   		<td>
