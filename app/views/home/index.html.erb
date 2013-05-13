@@ -8,19 +8,19 @@
       <th></th>	
       <th>Start<br> Year</th>
       <th><%= model_class.human_attribute_name(:state_id) %><br>
-      	<%= select_tag('search_state', options_from_collection_for_select(@states, "abbrev", "abbrev"), :prompt => "All States", :class => 'med-select' )%>
+      	<%= select_tag('search_state', options_from_collection_for_select(@states, "abbrev", "name"), :prompt => "All States", :class => 'med-select' )%>
       </th>
       <th>Initiative Topic<br>
        	<%= select_tag('search_topic', options_from_collection_for_select(@topics, "name", "name"), :prompt => "All Topics", :class => 'xlarge-select' )%>
       </th>
       <th>Population Target<br>
-      	<%= select_tag('search_population', options_from_collection_for_select(@populations, "target", "target"), :prompt => "All Populations",:class => 'large-select' )%>
+      	<%= select_tag('search_population', options_from_collection_for_select(@populations, "target", "target"), :prompt => "All Targets",:class => 'large-select' )%>
       </th>
       <th>PD Receivers<br>
-      	<%= select_tag('search_pd', options_from_collection_for_select(@pds, "name", "name"), :prompt => "All PDs",:class => 'large-select' )%>
+      	<%= select_tag('search_pd', options_from_collection_for_select(@pds, "name", "name"), :prompt => "All Receivers",:class => 'large-select' )%>
       </th>
       <th>Implementation Stage<br>
-      	<%= select_tag('search_implementation', options_from_collection_for_select(@stages, "name", "name"), :prompt => "All Implementations",:class => 'large-select' )%>
+      	<%= select_tag('search_implementation', options_from_collection_for_select(@stages, "name", "name"), :prompt => "All Stages",:class => 'large-select' )%>
       </th>
       <th></th>
       <th></th>
