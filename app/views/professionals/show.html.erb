@@ -14,7 +14,7 @@
   <%= link_to t('.back', :default => t("helpers.links.back")),
              professionals_path, :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_professional_development_path(@professional), :class => 'btn' %>
+              edit_professional_path(@professional), :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
              professional_path(@professional),
               :method => 'delete',
