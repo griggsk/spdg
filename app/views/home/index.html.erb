@@ -8,7 +8,7 @@
       <th></th>	
       <th>Start<br> Year</th>
       <th><%= model_class.human_attribute_name(:state_id) %><br>
-      	<%= select_tag('search_state', options_from_collection_for_select(@states, "abbrev", "name"), :prompt => "All States", :class => 'med-select' )%>
+      	<%= select_tag('search_state', options_from_collection_for_select(@states, "abbrev", "name"), :prompt => "All States", :class => 'large-select' )%>
       </th>
       <th>Initiative Topic<br>
        	<%= select_tag('search_topic', options_from_collection_for_select(@topics, "name", "name"), :prompt => "All Topics", :class => 'xlarge-select' )%>
@@ -20,7 +20,7 @@
       	<%= select_tag('search_pd', options_from_collection_for_select(@pds, "name", "name"), :prompt => "All Receivers",:class => 'large-select' )%>
       </th>
       <th>Implementation Stage<br>
-      	<%= select_tag('search_implementation', options_from_collection_for_select(@stages, "name", "name"), :prompt => "All Stages",:class => 'large-select' )%>
+      	<%= select_tag('search_implementation', options_from_collection_for_select(@stages, "name", "name"), :prompt => "All Stages",:class => 'xlarge-select' )%>
       </th>
       <th></th>
       <th></th>
