@@ -53,9 +53,9 @@
 		     <div class="controls"> 
 		     	<% @pds.each do |pd| %>
 					<%= check_box_tag(
-		                            "initiative[professionaldevelopment_ids][]", 
+		                            "initiative[professional_ids][]", 
 		                            pd.id, 
-		                            @initiative.professionaldevelopments.detect{|d| d == pd}) %>
+		                            @initiative.professionals.detect{|d| d == pd}) %>
 					<%= "#{pd.name}"%><br />
 				<% end %>
 		    </div>

@@ -32,7 +32,7 @@ class InitiativesController < ApplicationController
     @states = State.all
     @topics = Topic.all
     @populations = Population.all
-    @pds = Professionaldevelopment.all
+    @pds = Professional.all
     @stages = Stage.all
     
     respond_to do |format|
@@ -48,7 +48,7 @@ class InitiativesController < ApplicationController
     @states = State.all
     @topics = Topic.all
     @populations = Population.all
-    @pds = Professionaldevelopment.all
+    @pds = Professional.all
     @stages = Stage.all
   end
 
@@ -59,7 +59,7 @@ class InitiativesController < ApplicationController
     @states = State.all
     @topics = Topic.all
     @populations = Population.all
-    @pds = Professionaldevelopment.all
+    @pds = Professional.all
     @stages = Stage.all
     
     respond_to do |format|
@@ -80,7 +80,7 @@ class InitiativesController < ApplicationController
     @states = State.all
     @topics = Topic.all
     @populations = Population.all
-    @pds = Professionaldevelopment.all
+    @pds = Professional.all
     @stages = Stage.all
     
     respond_to do |format|

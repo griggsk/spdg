@@ -1,2 +1,2 @@
-module ProfessionalDevelopmentsHelper
+module ProfessionalsHelper
 end

@@ -5,7 +5,7 @@ class HomeController < ApplicationController
     @topics = Topic.all
     @populations = Population.all
     @stages = Stage.all
-    @pds = Professionaldevelopment.all
+    @pds = Professional.all
    
 
     respond_to do |format|

@@ -17,7 +17,7 @@
   <dt><strong>Populations:</strong></dt>
   <dd><%= @initiative.populations.collect(&:target).join(", ") %></dd>
   <dt><strong>PD Receivers:</strong></dt>
-  <dd><%= @initiative.professionaldevelopments.collect(&:name).join(", ") %></dd>
+  <dd><%= @initiative.professionals.collect(&:name).join(", ") %></dd>
   <dt><strong>Stages:</strong></dt>
   <% @initiative.implementations.each do |implementation| %>
 	  		<dd><%= implementation.year%>: <%= implementation.stages.collect(&:name).join(", ") %></dd>

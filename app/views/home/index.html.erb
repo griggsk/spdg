@@ -36,7 +36,7 @@
         <td><abbr title="<%= initiative.state.name %>"><%= initiative.state.abbrev %></abbr></td>
         <td><%= initiative.topics.collect(&:name).join(" & ") %></td>
         <td><%= initiative.populations.collect(&:target).join(" & ") %></td>
-        <td><%= initiative.professionaldevelopments.collect(&:name).join(" & ") %></td>
+        <td><%= initiative.professionals.collect(&:name).join(" & ") %></td>
         <td>
         	<% initiative.implementations.each do |implementation| %>
   				<%= implementation.year %>: <%= implementation.stages.collect(&:name).join(" & ") %><%= ", " unless implementation == initiative.implementations.last %>
