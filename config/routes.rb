@@ -4,7 +4,7 @@ Profiles::Application.routes.draw do
   
   resources :populations
       
-  resources :professional_developments
+  resources :professionals
   
   resources :topics
   

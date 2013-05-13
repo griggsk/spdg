@@ -1,5 +1,5 @@
-<%= form_for @professional_developments, :html => { :class => 'form-horizontal' } do |f| %>
-<%= render :partial => "layouts/messages", :locals => {:object => @professional_developments} %>  
+<%= form_for @professional, :html => { :class => 'form-horizontal' } do |f| %>
+<%= render :partial => "layouts/messages", :locals => {:object => @professional} %>  
   <div class="control-group">
     <%= f.label :name, :class => 'control-label' %>
     <div class="controls">
@@ -10,6 +10,6 @@
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                professional_developments_path, :class => 'btn' %>
+               professionals_path, :class => 'btn' %>
   </div>
 <% end %>
