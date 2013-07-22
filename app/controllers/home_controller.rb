@@ -11,6 +11,7 @@ class HomeController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json =>  @initiatives }
+      format.csv { render :csv => @initiatives }
     end
   end
   
@@ -23,4 +24,5 @@ class HomeController < ApplicationController
       format.json { render :json =>  @initiative }
     end
   end
+  
 end

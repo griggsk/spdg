@@ -29,7 +29,7 @@
 	  <div class="control-group">
 	    <%= f.label :topic_ids, 'Initiative Topics', :for => 'initiative_topic_ids', :class => 'control-label' %>
 	    <div class="controls"> 
-	     <%= f.collection_select :topic_ids, @topics, :id, :name, {:name => 'initiative[topic_ids][]'}, {:multiple => :true, :class=>'input-xxlarge'} %>
+	     <%= f.collection_select :topic_ids, @topics, :id, :name, {:name => 'initiative[topic_ids][]'}, {:multiple => :true, :size => 10, :class=>'input-xxlarge'} %>
 	    </div>
 	  </div>
 	  <div class="row-fluid">
